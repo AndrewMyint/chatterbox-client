@@ -17,11 +17,10 @@ var App = {
 
   },
 
-  fetch: function(callback = ()=>{}) {
-    Parse.readAll((data) => {
+  fetch: function(callback) {
+    Parse.readAll(() => {
       // examine the response from the server request:
-      console.log(data);
-
+      console.log("Hello");
       callback();
     });
   },
