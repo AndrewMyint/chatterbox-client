@@ -11,7 +11,10 @@ var Parse = {
       contentType: 'application/json',
       success: successCB,
       error: errorCB || function(error) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc6451f33f9b6677cb328141027cb8bb487a749f
         console.error('chatterbox: Failed to fetch messages', error);
       }
     });

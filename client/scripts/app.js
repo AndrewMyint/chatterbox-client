@@ -27,7 +27,7 @@ var App = {
 
   startSpinner: function() {
     App.$spinner.show();
-    FormView.setStatus(true);
+    FormView.setStatus(false);
   },
 
   stopSpinner: function() {
