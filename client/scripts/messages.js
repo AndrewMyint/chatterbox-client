@@ -5,15 +5,14 @@ var Messages = {
     Parse.readAll((data) => {
       var filterData = data.results.map((el) => {
         return {username: el.username,
-                message: el.text};
+                message: _.escape(el.text)};
       }).forEach(element => {
-        //concating template
-        // html += MessageView.render(element);
         callback(element);
       });
-      //appending the template to the DOM
-    //  callback(html);
     })
+  },
+  refresh: function() {
+
   }
 };
 

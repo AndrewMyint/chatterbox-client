@@ -13,7 +13,7 @@ var FormView = {
     var message = {
       username: App.username,
       text: $message.val(),
-      roomname: 'Andrew'
+      roomname: 'AndrewNewRoom'
     };
     var successCB = function() {
       console.log('successful! :) ')

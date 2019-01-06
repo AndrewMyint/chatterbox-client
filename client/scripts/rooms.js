@@ -3,7 +3,10 @@ var Rooms = {
     Parse.readAll(data => {
     var currentName = ""
     var tempRoomName = data.results.map(element => {
-       return element.roomname;
+        if (element.roomname !== "" || element.roomname !== undefined){
+          return element.roomname;
+        }
+
       });
     console.log(tempRoomName);
     _.uniq(tempRoomName).forEach(element => {

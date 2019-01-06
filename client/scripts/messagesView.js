@@ -9,6 +9,7 @@ var MessagesView = {
   },
 
   renderMessage: function(message) {
+
     var html = MessageView.render(message);
     MessagesView.$chats.append(html);
   }
