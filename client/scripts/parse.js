@@ -11,10 +11,6 @@ var Parse = {
       contentType: 'application/json',
       success: successCB,
       error: errorCB || function(error) {
-<<<<<<< HEAD
-
-=======
->>>>>>> cc6451f33f9b6677cb328141027cb8bb487a749f
         console.error('chatterbox: Failed to fetch messages', error);
       }
     });
@@ -23,10 +19,11 @@ var Parse = {
   readAll: function(successCB, errorCB = null) {
     $.ajax({
       url: Parse.server,
-      type: 'GET',
-     // data: { order: '-createdAt' },
+      method: 'GET',
+     data: { order: '-createdAt' },
+
       // data: {message: message},
-    //  dataType: 'JSON',
+      //  dataType: 'jsonp',
       contentType: 'application/json',
       success: successCB,
       error: errorCB || function(error) {

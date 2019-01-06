@@ -17,17 +17,18 @@ var App = {
 
   },
 
-  fetch: function(callback) {
-    Parse.readAll(() => {
+  fetch: function(callback = () => {}) {
+    Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log("Hello");
+      console.log(data);
+
       callback();
     });
   },
 
   startSpinner: function() {
     App.$spinner.show();
-    FormView.setStatus(false);
+    FormView.setStatus(true);
   },
 
   stopSpinner: function() {

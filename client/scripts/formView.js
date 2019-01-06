@@ -15,15 +15,22 @@ var FormView = {
     // Server needs roomname, message?
     // Data sent to server should be an object
 
+    var message = {
+      username: window.username,
+      text: $message.val(),
+      roomname: 'Andrew'
+    };
 
-    var newMessage = {message: $message.val()};
-    console.log(newMessage)
-    console.log('click!');
+    // $message.val() = "";
+
+    // var newMessage = {message: $message.val()};
+    // console.log(newMessage)
+    // console.log('click!');
     var successCB = function() {
       console.log('successful! :) ')
     };
 
-    Parse.create(newMessage, successCB);
+    Parse.create(message, successCB);
     // FormView.setStatus();
 
   },
