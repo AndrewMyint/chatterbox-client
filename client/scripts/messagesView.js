@@ -5,6 +5,7 @@ var MessagesView = {
   initialize: function() {
     //should load all current messages
     Messages.initialize(MessagesView.renderMessage);
+    Friends.toggleStatus();
   },
 
   renderMessage: function(message) {

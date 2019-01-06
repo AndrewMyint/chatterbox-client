@@ -10,5 +10,10 @@ var Rooms = {
         callback(element);
       });
     });
+  },
+  add: function() {
+    RoomsView.$button.on("click", function() {
+
+    })
   }
 };
