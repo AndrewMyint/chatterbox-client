@@ -4,14 +4,12 @@ var MessagesView = {
 
   initialize: function() {
     //should load all current messages
-
+    Messages.initialize(MessagesView.renderMessage);
   },
 
   renderMessage: function(message) {
-    //should add any new messages to the dom
-    //render individual message
-    MessagesView.$chats.append('<div>"This is a test"</div>');
-    //append rendered message to the dom id chats
+    var html = MessageView.render(message);
+    MessagesView.$chats.append(html);
   }
 
 };

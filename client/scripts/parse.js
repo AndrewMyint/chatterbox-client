@@ -21,7 +21,6 @@ var Parse = {
       url: Parse.server,
       method: 'GET',
      data: { order: '-createdAt' },
-
       // data: {message: message},
       //  dataType: 'jsonp',
       contentType: 'application/json',

@@ -1,18 +1,20 @@
 var Messages = {
-  //handles submit button for new messages
-  //on click event
-
-  //grab text field input value
-  //conform message to messageView template
-  //append message to the dom
-  //post message to server
-
-
+  initialize: function(callback) {
+    //should load all current messages
+   // var html = '';
+    Parse.readAll((data) => {
+      var filterData = data.results.map((el) => {
+        return {username: el.username,
+                message: el.text};
+      }).forEach(element => {
+        //concating template
+        // html += MessageView.render(element);
+        callback(element);
+      });
+      //appending the template to the DOM
+    //  callback(html);
+    })
+  }
 };
 
-// Messages.$submit.on('click', function(val) {
-//   var $message = $('#message');
-//   var newMessage = $message.val();
-//   console.log(newMessage);
-// });
 
