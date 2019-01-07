@@ -5,7 +5,7 @@ var Messages = {
     Parse.readAll((data) => {
       var filterData = data.results.map((el) => {
         return {username: el.username,
-                message: _.escape(el.text)};
+                text: _.escape(el.text)};
       }).forEach(element => {
         callback(element);
       });

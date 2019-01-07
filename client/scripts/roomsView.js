@@ -7,6 +7,7 @@ var RoomsView = {
   initialize: function() {
    Rooms.initialize(RoomsView.renderRoom);
    Rooms.add();
+   Rooms.renderSelectedRoom();
   },
   renderRoom: function(room) {
     var option = '<option>' + room + '</option>';

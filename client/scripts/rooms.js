@@ -3,14 +3,12 @@ var Rooms = {
     Parse.readAll(data => {
     var currentName = ""
     var tempRoomName = data.results.map(element => {
-        if (element.roomname !== "" || element.roomname !== undefined){
-          return element.roomname;
+        if (element.roomname !== "" && element.roomname !== undefined){
+          return element.roomname.trim();
         }
       });
-    console.log(tempRoomName);
-    _.uniq(tempRoomName).forEach(element => {
-        callback(element);
-      });
+       console.log(_.uniq(tempRoomName));
+    _.uniq(tempRoomName).forEach(element => {callback(element);});
     });
   },
   add: function() {
@@ -26,6 +24,20 @@ var Rooms = {
     RoomsView.initialize();
     // MessagesView.$chats.html(" ");
     // MessagesView.initialize();
+  },
+  renderSelectedRoom: function() {
+    RoomsView.$select.on('change', function(){
+      var selectedRoom = this.value;
+      Parse.readAll(data => {
+        var filterSelectedRoom = data.results.filter(function(element){
+          return element.roomname.trim() === selectedRoom;
+        })
+        MessagesView.$chats.html(" ");
+        filterSelectedRoom.forEach(element => {
+          MessagesView.renderMessage(element);
+        })
+      })
+    })
   },
   roomData: function(){
     return {
