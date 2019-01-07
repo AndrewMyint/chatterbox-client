@@ -10,6 +10,7 @@ var MessagesView = {
   //append message to the DOM
   renderMessage: function(message) {
     if (message.text){
+      message.text = _.escape(message.text);
       var html = MessageView.render(message);
       MessagesView.$chats.append(html);
     }

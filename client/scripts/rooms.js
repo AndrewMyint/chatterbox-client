@@ -3,7 +3,7 @@ var Rooms = {
     Parse.readAll(data => {
     var currentName = ""
     var tempRoomName = data.results.map(element => {
-        if (element.roomname !== "" && element.roomname !== undefined){
+        if (element.roomname !== "" && element.roomname !== undefined && element.roomname !== null){
           return element.roomname.trim();
         }
       });
@@ -30,7 +30,9 @@ var Rooms = {
       var selectedRoom = this.value;
       Parse.readAll(data => {
         var filterSelectedRoom = data.results.filter(function(element){
-          return element.roomname.trim() === selectedRoom;
+          if (element.roomname !== "" && element.roomname !== undefined && element.roomname !== null){
+            return element.roomname.trim() === selectedRoom;
+          }
         })
         MessagesView.$chats.html(" ");
         filterSelectedRoom.forEach(element => {
