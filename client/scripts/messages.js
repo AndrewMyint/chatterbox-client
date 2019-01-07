@@ -13,6 +13,13 @@ var Messages = {
   },
   refresh: function() {
 
+  },
+  messageData : function(){
+    return {
+      username: App.username,
+      text: $('#message').val(),
+      roomname: RoomsView.$select.val()
+    }
   }
 };
 

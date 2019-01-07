@@ -10,15 +10,15 @@ var FormView = {
     var $message = $('#message');
     event.preventDefault();
 
-    var message = {
-      username: App.username,
-      text: $message.val(),
-      roomname: 'AndrewNewRoom'
-    };
+    // var message = {
+    //   username: App.username,
+    //   text: $message.val(),
+    //   roomname:  RoomsView.$select.val()
+    // };
     var successCB = function() {
       console.log('successful! :) ')
     };
-    Parse.create(message, successCB);
+    Parse.create(Messages.messageData(), successCB);
     MessagesView.$chats.html(" ");
     MessagesView.initialize();
   },
